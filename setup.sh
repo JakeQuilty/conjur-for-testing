@@ -14,10 +14,8 @@ cat admin_data
 echo "Initiating -url conjur -account myConjurAccount"
 docker-compose exec client conjur init -u conjur -a myConjurAccount
 docker-compose exec client conjur authn login -u admin
-echo "Copying policy to CLI container..."
-docker cp policy.yml conjur_client:/root/
 echo "Loading policy into root..."
-docker-compose exec client conjur policy load root /root/policy.yml > user_data
+docker-compose exec client conjur policy load root /policy/policy.yml > user_data
 cat user_data
 echo "Creating cert for API, and copying to ."
 docker-compose exec client cp /root/.conjurrc /root/temp-conjurrc

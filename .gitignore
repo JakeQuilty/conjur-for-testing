@@ -1,0 +1,7 @@
+# credentials
+admin_data
+data_key
+user_data
+
+#certs
+conjur-myConjurAccount.pem

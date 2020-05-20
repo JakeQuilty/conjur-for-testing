@@ -1,0 +1,13 @@
+- !policy
+  id: test
+  body:
+    - !host
+      id: myApp
+
+    - !variable
+      id: secret
+
+    - !permit
+      role: !host myApp
+      privileges: [read, execute, update]
+      resource: !variable secret
